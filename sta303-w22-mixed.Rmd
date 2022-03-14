@@ -18,9 +18,10 @@ header-includes:
 # Assessment details
 
 __Name__: Mixed assessment                                                                                                          
-__Type (Main, Mini or Basket)__: Main 
-__Value__: 20% (Path A) or 25% (Path B)                                                                                                                                __Due__: Wednesday, March 16, 2022; assessment window from 8:00 a.m. ET to 8:00 p.m. ET    
-__Submission instructions__: Timed component Via Quercus quiz (2 x 50 minutes, 1 attempt each, no pausing within each quiz) and [Markus](https://markus-ds.teach.cs.toronto.edu/) (10 percentage point penalty for not submitting required files)                                                      __Accommodations and extension policy__: In the case of a personal illness/emergency, a [declaration can be made](https://forms.office.com/Pages/ResponsePage.aspx?id=JsKqeAMvTUuQN7RtVsVSEOKHUU3SzAJJhmOKjJhDWEpUNTFDSzhZTFlXUzVYMVlNM1FEUTRZMkVWOC4u), but must be submitted no more than 3 days after the due date. Extensions may be requested through the same form up to 48 hours before the due date. |
+__Type (Main, Mini or Basket)__: Main  
+__Value__: 20% (Path A) or 25% (Path B)     
+__Due__: Wednesday, March 16, 2022; assessment window from 8:00 a.m. ET to 8:00 p.m. ET    
+__Submission instructions__: Timed component Via Quercus quizesz (2 x 50 minutes, 1 attempt each, no pausing within each quiz) and [Markus](https://markus-ds.teach.cs.toronto.edu/) (10 percentage point penalty for not submitting required files)                            __Accommodations and extension policy__: In the case of a personal illness/emergency, a [declaration can be made](https://forms.office.com/Pages/ResponsePage.aspx?id=JsKqeAMvTUuQN7RtVsVSEOKHUU3SzAJJhmOKjJhDWEpUNTFDSzhZTFlXUzVYMVlNM1FEUTRZMkVWOC4u), but must be submitted no more than 3 days after the due date. Extensions may be requested through the same form up to 48 hours before the due date. 
 
 
 The mixed assessment has THREE components:
@@ -56,7 +57,7 @@ __Before making any changes in this Rmd, you should Knit it to make sure it work
 
 # Setting up your libraries
 
-If you are working on this on the Jupyter Hub, the `tidyverse`,`lme4`, `lmtest`, `rvest` and `polite` packages will already be installed. 
+If you are working on this on the Jupyter Hub, the `tidyverse`, `lmtest`, `rvest` and `polite` packages will already be installed. 
 
 Note: **Do not add any additional libraries/packages**. You do not need them to complete these tasks and they may interfere with the autochecking of your submission.
 
@@ -67,7 +68,7 @@ Note: **Do not add any additional libraries/packages**. You do not need them to 
 # These all SHOULD be installed though.
 
 # These are the packages you will need for this activity.
-packages_needed <- c("tidyverse", "lme4", "lmtest", 
+packages_needed <- c("tidyverse", "lmtest", 
                      "rvest", "polite")
 
 package.check <- lapply(
@@ -84,7 +85,7 @@ rm(packages_needed, package.check)
 ```{r, libraries, message=FALSE, purl=FALSE}
 # Run libraries for easy access to the functions we'll be using
 library(tidyverse)
-library(lme4)
+library(lmtest)
 library(polite)
 library(rvest)
 ```
@@ -275,9 +276,9 @@ iii. Get the model matrix for `mod_both` and save it as `mod_both_mat`.
 iv. Run the following three likelihood ratio tests once you have created the models.
 
 ```
-test1 <- lmtest::lrtest(mod_person, mod_both)
-test2 <- lmtest::lrtest(mod_condition, mod_both)
-test3 <- lmtest::lrtest(mod_condition, mod_person)
+test1 <- lrtest(mod_person, mod_both)
+test2 <- lrtest(mod_condition, mod_both)
+test3 <- lrtest(mod_condition, mod_person)
 ```
 
 ```{r, eval = T}
@@ -307,7 +308,10 @@ i) Start by checking the relevant contents of the robots.txt with the `polite` p
 ii) Study prompt: Should you check any additional information from Spotify to ensure you are being an ethical scraper? If yes, please do so.
 
 
-```{r}
+```{r, eval = T, cache=TRUE}
+# I have set cache = TRUE for this chunk as you don't want to run it 
+# EVERY time you knit
+
 # Update the following code appropriately for your needs
 
 # URL for our class playlist
