@@ -142,6 +142,9 @@ Explore the audio features of the songs in our dataset in ONE faceted image.
 
 i. Create a tibble called `long_data` from `playlist_data`, remove `track_name` and `artist`, and change the dataset to be three columns: `track_id`, `name` and `value`. 
 
+
+ii. Use `long_data` to create a ggplot image that shows the distributions of each of the variables in the datasets (not including `track_id`). Histogram with `bins  = 30` is appropriate.
+
 Use the following template code:
 
 ```
@@ -151,9 +154,6 @@ long_data %>%
   facet_wrap(~______, scales = "free") +
   theme_minimal()
 ```
-
-ii. Use `long_data` to create a ggplot image that shows the distributions of each of the variables in the datasets (not including `track_id`). Histogram with `bins  = 30` is appropriate.
-
 
 ```{r, eval = TRUE}
 
