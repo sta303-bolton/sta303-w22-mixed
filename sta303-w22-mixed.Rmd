@@ -21,7 +21,8 @@ __Name__: Mixed assessment
 __Type (Main, Mini or Basket)__: Main  
 __Value__: 20% (Path A) or 25% (Path B)     
 __Due__: Wednesday, March 16, 2022; assessment window from 8:00 a.m. ET to 8:00 p.m. ET    
-__Submission instructions__: Timed component Via Quercus quizesz (2 x 50 minutes, 1 attempt each, no pausing within each quiz) and [Markus](https://markus-ds.teach.cs.toronto.edu/) (10 percentage point penalty for not submitting required files)                            __Accommodations and extension policy__: In the case of a personal illness/emergency, a [declaration can be made](https://forms.office.com/Pages/ResponsePage.aspx?id=JsKqeAMvTUuQN7RtVsVSEOKHUU3SzAJJhmOKjJhDWEpUNTFDSzhZTFlXUzVYMVlNM1FEUTRZMkVWOC4u), but must be submitted no more than 3 days after the due date. Extensions may be requested through the same form up to 48 hours before the due date. 
+__Submission instructions__: Timed component via Quercus quizzes (2 x 50 minutes, 1 attempt each, no pausing within each quiz) and [MarkUs](https://markus-ds.teach.cs.toronto.edu/) (10 percentage point penalty for not submitting required files)                            
+__Accommodations and extension policy__: In the case of a personal illness/emergency, a [declaration can be made](https://forms.office.com/Pages/ResponsePage.aspx?id=JsKqeAMvTUuQN7RtVsVSEOKHUU3SzAJJhmOKjJhDWEpUNTFDSzhZTFlXUzVYMVlNM1FEUTRZMkVWOC4u), but must be submitted no more than 3 days after the due date. Extensions may be requested through the same form up to 48 hours before the due date. 
 
 
 The mixed assessment has THREE components:
@@ -31,9 +32,9 @@ The mixed assessment has THREE components:
 -   [Timed assessment (PART A)](https://q.utoronto.ca/courses/253305/quizzes/237354) (50 minutes; 12-hour assessment window is 8:00 a.m. to 8:00 p.m. ET Wednesday, March 16).
 -   [Timed assessment (PART B)](https://q.utoronto.ca/courses/253305/quizzes/237355) (50 minutes; 12-hour assessment window is 8:00 a.m. to 8:00 p.m. ET Wednesday, March 16).
 
-The timed components are split across two timed quizzes so you can take a break in the middle if you wish you. I.e., you could do them one after the other, or plan to do one, take an hour break and do the next one. Whatever suits you is good, as long as you submit everything before 8:00 p.m. ET.
+The timed components are split across two timed quizzes so you can take a break in the middle if you wish. I.e., you could do them one after the other, or plan to do one, take an hour break and do the next one. Whatever suits you is good, as long as you submit everything before 8:00 p.m. ET.
 
--   See the [mixed assessments overview page](https://sta303-bolton.github.io/sta303-w22-courseguide/mixed-assessment.html) for further information and revision links.
+
 
 # How your grade is calculated
 
@@ -194,7 +195,7 @@ Run `summary()` and `confint` on  each model. Additionally, exponentiate the con
 
 ```
 
-## 2D) Fit an intercept only model with `valence` as the response. Call it `modelD`.
+## 2D) Fit an intercept-only model with `valence` as the response. Call it `modelD`.
 
 ```{r, eval = T}
 
@@ -238,7 +239,7 @@ Suppose I also had data on how many times I had played each of the songs from th
 i. Load the `play_count.csv` data from the data folder and call the tibble `play_count`.
 ii. Create a new tibble called `play_count_full`, and starting with the `play_count` data, merge on the `playlist_data`. Note: Choose an appropriate join function, so that no songs for which there is not play count data are included.
 iii. Create two new variables: `valence_cat` and `energy_cat`, that dichotomize each of these variables into "High" and "Low" with high values being 0.5 or above, and low below 0.5.
-iv. Create `count_summary`, that summarizes `play_count_full` to find the mean and variance for `play_count` and the number of observations, in each combination of the levels of `valence_cat` and `energy_cat` (i.e., there should be four rows).
+iv. Create `count_summary`, that summarizes `play_count_full` to find the mean and variance for `play_count` and the number of observations, in each combination of the levels of `valence_cat` and `energy_cat` (i.e., there should be four rows). Add `, `.groups = "drop"` as an argument to `summarize`.
 
 ```{r, eval = T}
 
